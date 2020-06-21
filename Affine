@@ -1,0 +1,14 @@
+def affine(a: int, b: int):
+  d = {}
+  for i in range(26):
+    d[chr(i+ord('A'))] = chr(((a*i+b)%26)+ord('A')) 
+  return d
+
+d = affine(9, 1)
+
+s = input()
+c = ''
+for i in range(len(s)):
+  c+= d[s[i]]
+
+print(c)
